@@ -43,7 +43,7 @@ resource "aws_route53_record" "record" {
 
 
 resource "aws_security_group" "sg" {
-  name        = "${var.instance_type}-${var.env}-sg"
+  name        = "${var.component}-${var.env}-sg"
   description = "All"
 
   ingress {
