@@ -31,17 +31,6 @@ resource "null_resource" "provisioner" {
   }
 }
 
-
-resource "aws_route53_record" "record" {
-  zone_id = "Z10202231Q9C3TKFTZOQE"
-  name    = "${var.component}-${var.env}.devops71.tech"
-  type    = "A"
-  ttl     = 30
-  records = [aws_instance.instance.private_ip]
-}
-
-
-
 resource "aws_security_group" "sg" {
   name        = "${var.component}-${var.env}-sg"
   description = "All"
@@ -64,6 +53,15 @@ resource "aws_security_group" "sg" {
   tags = {
     Name = "${var.component}-${var.env}-sg"
   }
+}
+
+
+resource "aws_route53_record" "record" {
+  zone_id = "Z10202231Q9C3TKFTZOQE"
+  name    = "${var.component}-${var.env}.devops71.tech"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instance.private_ip]
 }
 
 
