@@ -4,11 +4,6 @@ variable "instances" {
       name = "catalogue"
       type = "t3.micro"
     }
-    payment = {
-      name = "payment"
-      type = "t3.micro"
-      password = "roboshop123"
-    }
     redis = {
       name = "redis"
       type = "t3.micro"
@@ -23,6 +18,10 @@ variable "instances" {
     }
     mongodb = {
       name = "mongodb"
+      type = "t3.micro"
+    }
+    cart = {
+      name = "cart"
       type = "t3.micro"
     }
     rabbitmq = {
@@ -40,9 +39,11 @@ variable "instances" {
       type = "t3.micro"
       password = "Roboshop@1"
     }
-    cart = {
-      name = "cart"
+    payment = {
+      name = "payment"
       type = "t3.micro"
+      password = "roboshop123"
     }
+
   }
 }
