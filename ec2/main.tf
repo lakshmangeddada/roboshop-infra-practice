@@ -62,7 +62,7 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name = "${var.instance_type}-${var.env}-sg"
+    Name = "${var.component}-${var.env}-sg"
   }
 }
 
